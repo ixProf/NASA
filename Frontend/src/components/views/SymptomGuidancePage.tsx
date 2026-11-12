@@ -10,6 +10,7 @@ import {
 import { useLanguage } from '../../context/LanguageContext';
 import { useTelemetry } from '../../context/TelemetryContext';
 import { api } from '../../services/api';
+import { BodyMapPanel } from '../body3d/BodyMapPanel';
 
 interface SymptomItem {
   id: number;
@@ -345,6 +346,9 @@ export const SymptomGuidancePage: React.FC = () => {
 
   return (
     <div className="flex flex-col gap-3.5 animate-fade-in">
+      {/* ── Interactive 3D Anatomical Body Map ── */}
+      <BodyMapPanel />
+
       {/* Top Card: Interactive 18-Symptom Assessment Engine (/api/symptoms & /api/symptoms/assess) */}
       <div className="glass-panel rounded-[22px] p-5">
         {/* Active Scenario Live Interconnection Banner */}
